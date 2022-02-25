@@ -49,14 +49,27 @@ __This repository assumes readers have a complete ROS1 environment, if you haven
   
   Now the terminal will looks like below:
   
+  
+  ![alt test](https://github.com/yuuxii0110/uavionics_workshop1/blob/main/images/teleop_terminal.png?raw=true)
+  
   Lastly, open another terminal and do the similar thing with subscriber code.
   ```
   source ~/catkin_ws/devel/setup.bash
   rosrun uavionics_workshop1 workshop_sub.py
   ```
   
+  Check if the terminal streaming the message:
+  ![alt test](https://github.com/yuuxii0110/uavionics_workshop1/blob/main/images/sub_terminal.png?raw=true)
+  
   Now go to the teleop terminal to control the motor speed by pressing "w" (increase speed), "s" (decrease speed)
   To quit the program, press "c"
+  
+  Observe the rosnode and rostopic by opening a new terminal and type:
+  ```
+  rqt_graph
+  ```
+  ![alt test](https://github.com/yuuxii0110/uavionics_workshop1/blob/main/images/rqt_graph.png?raw=true)
+  
   
   
  
