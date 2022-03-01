@@ -66,9 +66,9 @@ __This repository assumes readers have a complete ROS1 environment, if you haven
   source ~/catkin_ws/devel/setup.bash
   rosrun uavionics_workshop1 workshop_sub.py --pin <motor_pin> --topic /pwm_percent2
   ```
-  Note: replace the motor_pin to the pin_num that attached to the motor2
+  __Note: replace the motor_pin to the pin_num on the raspberry PI that attached to the motor2__
   
-  Now go to the teleop terminal to control the motor speed by pressing "w" (increase speed), "s" (decrease speed)
+  Now go to the teleop terminal to control a motor speed by pressing "w" (increase speed), "s" (decrease speed)
   To quit the program, press "c"
   
   Observe the rosnode and rostopic by opening a new terminal and type:
