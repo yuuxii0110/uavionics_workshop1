@@ -58,8 +58,15 @@ __This repository assumes readers have a complete ROS1 environment, if you haven
   rosrun uavionics_workshop1 workshop_sub.py
   ```
   
-  Check if the terminal streaming the message:
+  Check if the terminal shows the message:
   ![alt test](https://github.com/yuuxii0110/uavionics_workshop1/blob/main/images/sub_terminal.png?raw=true)
+  
+  If you wish to control both motors simultaneously, open another terminal and type
+  ```
+  source ~/catkin_ws/devel/setup.bash
+  rosrun uavionics_workshop1 workshop_sub.py --pin <motor_pin> --topic /pwm_percent2
+  ```
+  Note: replace the motor_pin to the pin_num that attached to the motor2
   
   Now go to the teleop terminal to control the motor speed by pressing "w" (increase speed), "s" (decrease speed)
   To quit the program, press "c"
@@ -68,7 +75,7 @@ __This repository assumes readers have a complete ROS1 environment, if you haven
   ```
   rqt_graph
   ```
-  ![alt test](https://github.com/yuuxii0110/uavionics_workshop1/blob/main/images/rqt_graph.png?raw=true)
+  ![alt test](https://github.com/yuuxii0110/uavionics_workshop1/blob/main/images/rqtgraph2.png?raw=true)
   
   
   
