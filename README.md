@@ -21,7 +21,7 @@ __This repository assumes readers have a complete ROS1 environment, if you haven
   Then, in the terminal, proceed to the src directory and clone this repo
   ```
   cd ~/catkin_ws/src
-  git clone 
+  git clone https://github.com/yuuxii0110/uavionics_workshop1.git
   ```
   
   Now you have done cloning all the resources from github, next we have to compile all the codes:
