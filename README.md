@@ -75,7 +75,7 @@ __This repository assumes readers have a complete ROS1 environment, if you haven
   ```
   rqt_graph
   ```
-  ![alt test](https://github.com/yuuxii0110/uavionics_workshop1/blob/main/images/rqtgraph2.png?raw=true)
+  ![alt test](https://github.com/yuuxii0110/uavionics_workshop1/blob/main/images/rosgraph2.png?raw=true)
   
   
   
