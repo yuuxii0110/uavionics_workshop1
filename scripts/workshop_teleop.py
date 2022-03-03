@@ -9,7 +9,8 @@ msg = """
 Reading from the keyboard  and Publishing to bridge!
 ---------------------------
 Control the motor:
-    
+range = [-1,1]
+
 motor1:
 w : up (+10%)
 s : down (-10%)
@@ -73,7 +74,7 @@ def vels(pwm1,pwm2):
 
 def limit_output(v):
     v = min(1,v)
-    v = max(0,v)
+    v = max(-1,v)
     return v
 
 if __name__=="__main__":

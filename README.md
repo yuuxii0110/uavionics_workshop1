@@ -29,16 +29,16 @@ __This repository assumes readers have a complete ROS1 environment, if you haven
   cd ~/catkin_ws
   catkin_make
   ```
-  
-3) Run everything!
-  First, initialize the ros master in a new terminal
-  ```
-  roscore
-  ```
-  
   Makesure you have make the python codes executable:
   ```
   chmod +x ~/catkin_ws/src/uavionics_workshop1/scripts/workshop_sub.py ~/catkin_ws/src/uavionics_workshop1/scripts/workshop_teleop.py
+  ```
+  
+  
+3) Start running the code!
+  First, initialize the ros master in a new terminal
+  ```
+  roscore
   ```
   
   Then, open another terminal, source the setup.bash file in your workspace before run the teleop code.
@@ -64,11 +64,11 @@ __This repository assumes readers have a complete ROS1 environment, if you haven
   If you wish to control both motors simultaneously, open another terminal and type
   ```
   source ~/catkin_ws/devel/setup.bash
-  rosrun uavionics_workshop1 workshop_sub.py --pin <motor_pin> --topic /pwm_percent2
+  rosrun uavionics_workshop1 workshop_sub.py --in1 <motor_pin_in1> --in2 <motor_pin_in2> --topic /pwm_percent2
   ```
   __Note: replace the motor_pin to the pin_num on the raspberry PI that attached to the motor2__
   
-  Now go to the teleop terminal to control a motor speed by pressing "w" (increase speed), "s" (decrease speed)
+  Now go to the teleop terminal to control a motor speed by pressing "w" (increase speed), "s" (decrease speed), feel free to go negative to revert the spinning direction of the motor
   To quit the program, press "c"
   
   Observe the rosnode and rostopic by opening a new terminal and type:
