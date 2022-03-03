@@ -18,6 +18,7 @@ motor2:
 u : up (+10%)
 j : down (-10%)
 
+r : reset (0,0)
 c : quit the program
 """
 
@@ -100,7 +101,10 @@ if __name__=="__main__":
 
             elif key == "j":
                 pwm2 -= 0.1
-
+            
+            elif key == "r":
+                pwm1 = pwm2 = 0.0
+                
             elif key == "c":
                 break
 
