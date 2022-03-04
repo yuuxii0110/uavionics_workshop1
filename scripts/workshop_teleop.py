@@ -12,12 +12,12 @@ Control the motor:
 range = [-1,1]
 
 motor1:
-w : up (+10%)
-s : down (-10%)
+w : up (+5%)
+s : down (-5%)
 
 motor2:
-u : up (+10%)
-j : down (-10%)
+u : up (+5%)
+j : down (-5%)
 
 r : reset (0,0)
 c : quit the program
@@ -83,8 +83,8 @@ if __name__=="__main__":
     pub_thread = PublishThread()
     try:
         print(msg)
-        pwm1 = 0.1
-        pwm2 = 0.3
+        pwm1 = 0.05
+        pwm2 = -0.05
         rospy.loginfo(vels(pwm1,pwm2))
         pub_thread.update(0.1)
         status = 0
@@ -92,16 +92,16 @@ if __name__=="__main__":
             key = getKey()
             print(key)
             if key == "w":
-                pwm1 += 0.1
+                pwm1 += 0.05
 
             elif key == "s":
-                pwm1 -= 0.1
+                pwm1 -= 0.05
             
             elif key == "u":
-                pwm2 += 0.1
+                pwm2 += 0.05
 
             elif key == "j":
-                pwm2 -= 0.1
+                pwm2 -= 0.05
             
             elif key == "r":
                 pwm1 = pwm2 = 0.0

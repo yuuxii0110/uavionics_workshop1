@@ -7,9 +7,8 @@ from time import sleep
 from std_msgs.msg import Float64
 
 last_value = 0
-direction = 0
 
-def operate(value):
+def operate(value,direction=0):
     if direction:
         pi_pwm2.ChangeDutyCycle(0)
         pi_pwm1.ChangeDutyCycle(value)
@@ -27,7 +26,7 @@ def send_signal(data):
 
         rospy.loginfo(f"send duty cycle: {abs(data.data*100)} in direction {direction}")
         sleep(0.01)
-        operate(abs(data.data)*100)
+        operate(abs(data.data)*100,direction)
         last_value = data.data
 
 if __name__ == "__main__":
@@ -36,9 +35,9 @@ if __name__ == "__main__":
     parser.add_argument('--in2', type=int, default=15, help='motor_IN2_pin')
     parser.add_argument('--topic', type=str, default='/pwm_percent1', help='corresponding ros topic')
     args = parser.parse_args()
-    print('pin num, ', args.pin, ', topic_name: ', str(args.topic))
-    motor_in1 = args.in1
-    motor_in2 = args.in2
+    print('pin num, ', args.in1, args.in2, ', topic_name: ', str(args.topic))
+    motor_in1 = int(args.in1)
+    motor_in2 = int(args.in2)
     topic = args.topic
     GPIO.setwarnings(False)			#disable warnings
     GPIO.setmode(GPIO.BOARD)		#set pin numbering system
@@ -50,7 +49,7 @@ if __name__ == "__main__":
     pi_pwm1.start(0)
     pi_pwm2 = GPIO.PWM(motor_in2,50)		
     pi_pwm2.start(0)	
-    rospy.init_node('bridge_'+str(pi_pwm1), anonymous=False)
-    rospy.loginfo("initialized bridge_"+str(pi_pwm1))
+    rospy.init_node('bridge_'+str(motor_in1), anonymous=False)
+    rospy.loginfo("initialized bridge_"+str(motor_in1))
     sub1 = rospy.Subscriber(topic, Float64, send_signal, queue_size=1)
     rospy.spin()
